@@ -60,6 +60,8 @@ config :phoenix, :stacktrace_depth, 20
 # New Mysql config
 config :chat, Chat.Repo,
   adapter: Ecto.Adapters.MySQL,
+#  migration_source: "schema_migrations",
+#  migration_primary_key: [id: :version, type: :varchar],
   database: "tout",
   username: "tout",
   password: "112233",

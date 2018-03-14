@@ -7,13 +7,26 @@ config :chat, ChatWeb.Endpoint,
   server: false
 
 # Print only warnings and errors during test
-config :logger, level: :warn
+config :logger, level: :debug, backends: [:console], compile_time_purge_level: :debug
 
 # Configure your database
+#config :chat, Chat.Repo,
+#  adapter: Ecto.Adapters.Postgres,
+#  username: "postgres",
+#  password: "postgres",
+#  database: "chat_test",
+#  hostname: "localhost",
+#  pool: Ecto.Adapters.SQL.Sandbox
+
 config :chat, Chat.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "chat_test",
-  hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox
+  adapter: Ecto.Adapters.MySQL,
+  pool: Ecto.Adapters.SQL.Sandbox,
+#  migration_source: "schema_migrations",
+#  migration_primary_key: [id: :version, type: :string],
+  database: "tout_test",
+  username: "root",
+  password: "123456",
+  hostname: "docker.for.mac.localhost",
+  port: 3307
+
+# mysql -u root -P 3307 -h docker.for.mac.localhost tout_test -p

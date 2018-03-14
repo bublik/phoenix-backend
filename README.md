@@ -1,3 +1,11 @@
+mix phx.gen.json People UnsubscribeReason  unsubscribe_reasons title:string identifier:string show_to_user:boolean
+
+mysql -u root -h 127.0.0.1 -P 3307 tout_test -p
+$ mix ecto.migrate
+
+MIX_ENV=test mix ecto.reset
+
+
 # Chat
 
 To start your Phoenix server:

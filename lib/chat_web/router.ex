@@ -20,7 +20,8 @@ defmodule ChatWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", ChatWeb do
-  #   pipe_through :api
-  # end
+   scope "/", ChatWeb do
+     pipe_through :api
+     resources "/unsubscribe_reasons", UnsubscribeReasonController, except: [:create, :new, :show, :edit, :delete, :update]
+   end
 end

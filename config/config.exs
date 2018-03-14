@@ -17,6 +17,11 @@ config :chat, ChatWeb.Endpoint,
   pubsub: [name: Chat.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+config :mime, :types, %{
+  "application/vnd.api+json" => ["json-api"],
+  "application/json" => ["json"],
+}
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
